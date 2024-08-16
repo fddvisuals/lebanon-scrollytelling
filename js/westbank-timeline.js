@@ -1,5 +1,5 @@
 var config = {
-  style: "mapbox://styles/fddvisuals/clzws2xw7005b01qq4cj82nd6/draft",
+  style: "mapbox://styles/fddvisuals/clzwugfep005801qrhw1uc0zl",
   accessToken:
     "pk.eyJ1IjoiZmRkdmlzdWFscyIsImEiOiJjbGZyODY1dncwMWNlM3pvdTNxNjF4dG1rIn0.wX4YYvWhm5W-5t8y5pp95w",
   showMarkers: false,
@@ -155,11 +155,10 @@ var config = {
     {
       id: "chap-4",
       title: "",
-      description: `<div class="features-card fourth">
-        <div class="features-card-title">Munitions over time breakdown</div>
-        <p class="paragraph"><!-- existing content --></p>
-        <div style="position:absolute; right:0; top:0;">
-          <img src="your_image_link_here" alt="Image Description" style="max-width:100%; height:auto;">
+      description: `<div class="features-card hide">
+        
+        <div class="myDiv">
+          <iframe src='https://flo.uri.sh/visualisation/18759644/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:1000px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'></div>
         </div>
       </div>`,
       location: {
