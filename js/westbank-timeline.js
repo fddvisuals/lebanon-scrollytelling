@@ -1,5 +1,5 @@
 var config = {
-  style: "mapbox://styles/fddvisuals/clzworm6q004s01qj50zfbajo",
+  style: "mapbox://styles/fddvisuals/clzws2xw7005b01qq4cj82nd6/draft",
   accessToken:
     "pk.eyJ1IjoiZmRkdmlzdWFscyIsImEiOiJjbGZyODY1dncwMWNlM3pvdTNxNjF4dG1rIn0.wX4YYvWhm5W-5t8y5pp95w",
   showMarkers: false,
@@ -30,6 +30,10 @@ var config = {
         },
         {
           layer: "litani-source",
+          opacity: 0,
+        },
+        {
+          layer: "litani-river-layer",
           opacity: 0,
         },
       ],
@@ -71,21 +75,74 @@ var config = {
       id: "chap-2",
       title: "",
       description: `<div class="features-card second" style="will-change: filter, transform; filter: brightness(100%); transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
-          <div class="features-card-title">March 22, 2022</div>
+          <div class="features-card-title">For the South of Litani</div>
           
-          <p class="paragraph">Muhammad Galeb Ahmad Abu Alqian stabs and kills three Israelis, then rams and kills a fourth with his car in the southern Israeli city of Beersheba.</p>
+          <p class="paragraph">Resolution 1701 called upon Lebanon to “establish[…] between the Blue Line and the Litani river of an area free of any armed personnel, assets and weapons other than those of the Government of Lebanon and of UNIFIL.” 
+
+</p>
         </div>`,
       location: {
-        center: [35.3, 33.3], // flipped coordinates
-        zoom: 5,
-        pitch: 60,
+        center: [35.42274, 33.25448],
+        zoom: 9.89,
+        pitch: 0.0,
         bearing: 0.0,
+        speed: 2,
+      },
+
+      onChapterEnter: [
+        {
+          layer: "allPointsLayer",
+          opacity: 1,
+        },
+        {
+          //make this satellite layer
+          layer: "litani-river-layer",
+          opacity: 1,
+        },
+        {
+          //set timelout to show the river
+
+          layer: "litani-source",
+          opacity: 1,
+        },
+        {
+          layer: "mapbox-satellite",
+          opacity: 1,
+        },
+      ],
+      onChapterExit: [
+        {
+          layer: "litani-river-layer",
+          opacity: 0,
+        },
+      ],
+    },
+    {
+      id: "chap-4",
+      title: "",
+      description: `
+    <div class="features-card fourth">
+      <div class="features-card-title">For the rest of Lebanon</div>
+      <ul class="paragraph">
+        <li>Resolution 1701: “require[s] the disarmament of all armed groups in Lebanon, so that… there will be no weapons or authority in Lebanon other than that of the Lebanese State.”</li>
+        <li>Prohibits the presence of “foreign forces in Lebanon without the consent of its Government.”</li>
+        <li>Prohibits “sales or supply of arms and related materiel to Lebanon except as authorized by its Government.”</li>
+        <li>Lebanon has failed to fulfill this obligation.</li>
+        <li>Beirut’s government and apparatuses have failed to restrain Hezbollah in any manner or halt the flow of weapons to the group, let alone made any move toward disarming it.</li>
+      </ul>
+    </div>
+  `,
+      location: {
+        center: [35.82921, 33.9117], // flipped coordinates
+        zoom: 8.32,
+        pitch: 48,
+        bearing: 16.8,
         speed: 2,
       },
       onChapterEnter: [
         {
           layer: "litani-source",
-          opacity: 0,
+          opacity: 1,
         },
       ],
       onChapterExit: [
@@ -96,17 +153,20 @@ var config = {
       ],
     },
     {
-      id: "chap-3",
+      id: "chap-4",
       title: "",
       description: `<div class="features-card fourth">
-        <div class="features-card-title">March 29, 2022</div>
-        <p class="paragraph">Dia Hamarsheh, from the West Bank village of Ya’bad, enters Israel illegally and kills four civilians and a police officer in Bnei Brak.</p>
+        <div class="features-card-title">Munitions over time breakdown</div>
+        <p class="paragraph"><!-- existing content --></p>
+        <div style="position:absolute; right:0; top:0;">
+          <img src="your_image_link_here" alt="Image Description" style="max-width:100%; height:auto;">
+        </div>
       </div>`,
       location: {
-        center: [35.1672930827228, 32.44672068077165], // flipped coordinates
-        zoom: 12,
-        pitch: 0.0,
-        bearing: 0.0,
+        center: [35.82921, 33.9117], // flipped coordinates
+        zoom: 8.32,
+        pitch: 48,
+        bearing: 16.8,
         speed: 2,
       },
     },
@@ -221,7 +281,6 @@ if (footer.innerText.length > 0) {
 }
 
 mapboxgl.accessToken = config.accessToken;
-
 const transformRequest = (url) => {
   const hasQuery = url.indexOf("?") !== -1;
   const suffix = hasQuery
@@ -251,7 +310,7 @@ map.on("load", function () {
   scroller
     .setup({
       step: ".step",
-      offset: 0.8,
+      offset: 0.5,
       progress: true,
     })
     .onStepEnter((response) => {
@@ -261,8 +320,6 @@ map.on("load", function () {
       );
       console.log(response.element.id);
       response.element.classList.add("active");
-      //set filter in the mapbox layer "circle-layer"
-      console.log(chapter.id);
       map.flyTo(chapter.location);
       if (config.showMarkers) {
         marker.setLngLat(chapter.location.center);
@@ -270,15 +327,19 @@ map.on("load", function () {
       if (chapter.onChapterEnter.length > 0) {
         chapter.onChapterEnter.forEach(setLayerOpacity);
       }
+
+      // Add the following lines
+      // if (chapter.id == "chap-4") {
+      //   map.getCanvas().style.opacity = "0.5"; // Apply blur effect by reducing opacity
+      // } else {
+      //   map.getCanvas().style.opacity = "1"; // Reset opacity if not viewing chapter 4
+      // }
     })
     .onStepExit((response) => {
       var chapter = config.chapters.find(
         (chap) => chap.id === response.element.id
       );
       response.element.classList.remove("active");
-      // map.removeFilter("circle-layer");
-      // Hide popups when a user exits a step
-      popup.remove();
 
       if (chapter.onChapterExit.length > 0) {
         chapter.onChapterExit.forEach(setLayerOpacity);
@@ -344,6 +405,45 @@ map.on("load", function () {
         map.addImage("red-icon", image);
       });
 
+      //add source geojson/litani.geojson
+      map.addSource("litani-river-source", {
+        type: "geojson",
+        data: "geojson/litani.geojson",
+      });
+      //hide river layer opacity  by default
+
+      map.addLayer({
+        id: "litani-river-layer",
+        type: "line",
+        source: "litani-river-source",
+        layout: {
+          "line-join": "round",
+          "line-cap": "round",
+        },
+        paint: {
+          "line-color": "#4c7279",
+          "line-width": 1,
+        },
+        opacity: 0,
+      });
+      // add label to litani on the map
+      map.addLayer({
+        id: "litani-name",
+        type: "symbol",
+        source: "litani-river-source",
+        layout: {
+          "text-field": "Litani River",
+          "text-font": ["Open Sans Regular"],
+          "text-size": 12,
+          "text-transform": "uppercase",
+          //position
+          "text-anchor": "center",
+          "text-offset": [0, 0],
+        },
+        paint: {
+          "text-color": "#4c7279",
+        },
+      });
       map.addLayer({
         id: "points",
         type: "symbol",
@@ -360,7 +460,6 @@ map.on("load", function () {
           "icon-allow-overlap": true,
         },
       });
-
       map.addLayer({
         id: "allPointsLayer",
         type: "symbol",
@@ -413,36 +512,6 @@ map.on("load", function () {
     .catch(function (error) {
       console.error("Error loading the CSV data: ", error);
     });
-
-  var popup = new mapboxgl.Popup({
-    maxWidth: 300,
-    backgroundColor: "rgba(0,0,0,0.1)",
-    closeOnClick: false,
-    closeButton: false,
-    closeOnMove: true,
-    offset: 25,
-    className: "features-card-popup",
-  });
-
-  map.on("zoomend", function () {
-
-
-    if (features.length) {
-      var feature = features[0];
-
-      // Remove any existing popups.
-      popup.remove();
-
-      // Set the coordinates of the pop-up to the clicked location.
-      popup.setLngLat(feature.geometry.coordinates);
-
-      // Set the HTML of the pop-up to the "description" property of the clicked feature.
-      popup.setHTML(feature.properties.description);
-
-      // Add the pop-up to the map.
-      popup.addTo(map);
-    }
-  });
 });
 
 // setup resize event
