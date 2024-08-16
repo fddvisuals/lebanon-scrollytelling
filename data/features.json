@@ -1,0 +1,97 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "chap-1",
+        "title": "Jenin",
+        "description": "<div class='div-block'><img src='https://uploads-ssl.webflow.com/640a1d033e57294e0f49e0a9/640db9b85617008098e3df8d__118870058_tv067927108.jpg.webp' loading='lazy' sizes='100vw' srcset='images/BASTERD_01_autoOrient_i-640x400-p-500.jpeg 500w, images/BASTERD_01_autoOrient_i-640x400.jpeg 640w' alt=''></div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            35.291656759162784,32.46282470665049
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "chap-2",
+        "title": "My Pop-up Title",
+        "description": "<div class=\"div-block\">\n  <div data-poster-url=\"https://assets.website-files.com/640a1d033e57294e0f49e0a9/640a248c955b91660ded8144_ssstwittercom_1678386292847-poster-00001.jpg\"\n    data-video-urls=\"https://assets.website-files.com/640a1d033e57294e0f49e0a9/640a248c955b91660ded8144_ssstwittercom_1678386292847-transcode.mp4,https://assets.website-files.com/640a1d033e57294e0f49e0a9/640a248c955b91660ded8144_ssstwittercom_1678386292847-transcode.webm\"\n    data-autoplay=\"true\"\n    data-loop=\"true\"\n    data-wf-ignore=\"true\"\n    class=\"background-video w-background-video w-background-video-atom\">\n    <video id=\"40fea813-fac8-6d73-7971-d22d8c28966b-video\"\n      autoplay=\"true\"\n      loop=\"true\"\n      style=\"background-image: url('https://assets.website-files.com/640a1d033e57294e0f49e0a9/640a248c955b91660ded8144_ssstwittercom_1678386292847-poster-00001.jpg')\"\n      muted\n      playsinline\n      data-wf-ignore=\"true\"\n      data-object-fit=\"cover\">\n      <source src=\"https://assets.website-files.com/640a1d033e57294e0f49e0a9/640a248c955b91660ded8144_ssstwittercom_1678386292847-transcode.mp4\"\n        data-wf-ignore=\"true\">\n      <source src=\"https://assets.website-files.com/640a1d033e57294e0f49e0a9/640a248c955b91660ded8144_ssstwittercom_1678386292847-transcode.webm\"\n        data-wf-ignore=\"true\">\n    </video>\n  </div>\n</div>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.8111117411343,
+          31.246096637069705
+        ]
+      }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": "chap-3",
+            "title": "My Pop-up Title",
+            "description": "<div class='div-block'><img src='images/BASTERD_01_autoOrient_i-640x400.jpeg' loading='lazy' sizes='100vw' srcset='images/BASTERD_01_autoOrient_i-640x400-p-500.jpeg 500w, images/BASTERD_01_autoOrient_i-640x400.jpeg 640w' alt=''></div>"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                35.1672930827228,32.44672068077165
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+          "id": "chap-4",
+          "title": "My Pop-up Title",
+          "description": "<div class=\"div-block\">\n  <div data-poster-url=\"videos/ssstwittercom_1678474975771-poster-00001.jpg\" data-video-urls=\"videos/ssstwittercom_1678474975771-transcode.mp4,videos/ssstwittercom_1678474975771-transcode.webm\" data-autoplay=\"true\" data-loop=\"true\" data-wf-ignore=\"true\" class=\"background-video w-background-video w-background-video-atom\"><video id=\"ddf89169-c048-844a-6bcf-f720c67d4434-video\" autoplay=\"\" loop=\"\" style=\"background-image:url(&quot;videos/ssstwittercom_1678474975771-poster-00001.jpg&quot;)\" muted=\"\" playsinline=\"\" data-wf-ignore=\"true\" data-object-fit=\"cover\">\n      <source src=\"videos/ssstwittercom_1678474975771-transcode.mp4\" data-wf-ignore=\"true\">\n      <source src=\"videos/ssstwittercom_1678474975771-transcode.webm\" data-wf-ignore=\"true\">\n    </video></div>\n</div>"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.312186184342856,31.9961653
+          ]
+        }
+      },
+      {
+          "type": "Feature",
+          "properties": {
+            "id": "chap-5",
+            "title": "My Pop-up Title",
+            "description": "<div class=\"div-block\">\n  <div data-poster-url=\"videos/videoplayback-poster-00001.jpg\" data-video-urls=\"videos/videoplayback-transcode.mp4,videos/videoplayback-transcode.webm\" data-autoplay=\"true\" data-loop=\"true\" data-wf-ignore=\"true\" class=\"background-video w-background-video w-background-video-atom\">\n    <video id=\"ffe64fc7-6de3-f1a1-ee6d-efed0a3c2f2a-video\" autoplay=\"\" loop=\"\" style=\"background-image:url(&quot;videos/videoplayback-poster-00001.jpg&quot;)\" muted=\"\" playsinline=\"\" data-wf-ignore=\"true\" data-object-fit=\"cover\">\n      <source src=\"videos/videoplayback-transcode.mp4\" data-wf-ignore=\"true\">\n      <source src=\"videos/videoplayback-transcode.webm\" data-wf-ignore=\"true\">\n    </video>\n  </div>\n</div>"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+                34.771196664248905,32.065680628277896
+            ]
+          }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "chap-6",
+          "title": "My Pop-up Title",
+          "description": "<div class=\"div-block\"><img src=\"images/Unknown.jpg\" loading=\"lazy\" alt=\"\"></div>"
+          
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.20725566396621,
+            32.525081998189506
+          ]
+        }
+      }
+      
+      
+      
+    
+    
+  ]
+}
