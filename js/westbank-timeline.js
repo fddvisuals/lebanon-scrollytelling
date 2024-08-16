@@ -12,9 +12,9 @@ var config = {
   chapters: [
     {
       id: "chap-0",
-      title: "The War in Lebanon",
-      description:
-        "After the 2006 war between Hezbollah and Israel, the UN Security Council passed Resolution 1701. The Resolution obligated Lebanon to eject Hezbollah from south Lebanon to north of the Litani River – or approximately 40km from the Blue Line, the de facto frontier line with Israel – as a preliminary step to disarming the group. This never happened. Then, on October 8, 2023 Hezbollah launched an ongoing war of attrition against Israel in support of Palestinian militant factions in the Gaza Strip. What follows below is a map and timeline of that war of attrition.",
+      // title: "The War in Lebanon",
+      // description:
+      //   "After the 2006 war between Hezbollah and Israel, the UN Security Council passed Resolution 1701. The Resolution obligated Lebanon to eject Hezbollah from south Lebanon to north of the Litani River – or approximately 40km from the Blue Line, the de facto frontier line with Israel – as a preliminary step to disarming the group. This never happened. Then, on October 8, 2023 Hezbollah launched an ongoing war of attrition against Israel in support of Palestinian militant factions in the Gaza Strip. What follows below is a map and timeline of that war of attrition.",
       location: {
         //coordinates of Israel
         center: [35.3, 33.3], // flipped coordinates
